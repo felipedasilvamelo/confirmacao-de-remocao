@@ -51,14 +51,13 @@ class _ChampionshipsPageState extends State<ChampionshipsPage> {
 
   //  Confirmação inicial
   //  - showDialog<bool> é a FUNÇÃO que exibe o diálogo (overlay modal)
-  //  - AlertDialog é o WIDGET que representa o conteúdo da caixa de diálogo
   //  - Retorna true (confirmado) ou false (cancelado)
   Future<bool> _confirmStep1(BuildContext context) async {
     final theme = Theme.of(context);
     final bool confirmed = await showDialog<bool>(
           context: context,
           barrierDismissible: false, // impede fechar tocando fora do diálogo
-          builder: (context) => AlertDialog( // WIDGET responsável pelo diálogo
+          builder: (context) => AlertDialog( 
             title: Text(
               'Remover Campeonato',
               style: TextStyle(
@@ -89,8 +88,6 @@ class _ChampionshipsPageState extends State<ChampionshipsPage> {
   }
 
   //  Confirmação final com consentimento explícito
-  //  - showDialog<bool> + AlertDialog (mesmos responsáveis)
-  //  - StatefulBuilder é o WIDGET que nos permite ter "setState" LOCAL
   //    dentro do diálogo para habilitar/desabilitar o botão com base no checkbox
   Future<bool> _confirmStep2(BuildContext context) async {
     final theme = Theme.of(context);
@@ -101,7 +98,7 @@ class _ChampionshipsPageState extends State<ChampionshipsPage> {
           barrierDismissible: false,
           builder: (ctx) => StatefulBuilder(
             // WIDGET responsável por manter estado local no diálogo
-            builder: (ctx, setState) => AlertDialog( // WIDGET do diálogo
+            builder: (ctx, setState) => AlertDialog( 
               title: Text(
                 'Confirmação final',
                 style: TextStyle(
