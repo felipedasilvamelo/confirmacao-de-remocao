@@ -194,7 +194,6 @@ class _ChampionshipsPageState extends State<ChampionshipsPage> {
           : Padding(
               padding: const EdgeInsets.all(12),
               child: GridView.builder(
-                // ✅ Somente 2 itens
                 itemCount: _items.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
